@@ -5,10 +5,10 @@
   "description": "A local 3D asset discovery and Unity import workbench.",
   "license": "MIT",
   "author": "3D Model Search Workbench contributors",
-  "homepage": "https://github.com/Oycreatesabug/3d-model-search-workbench",
+  "homepage": "https://github.com/bowling2005/3d-model-search-workbench",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Oycreatesabug/3d-model-search-workbench.git"
+    "url": "https://github.com/bowling2005/3d-model-search-workbench.git"
   },
   "engines": {
     "node": ">=22"

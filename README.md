@@ -1,6 +1,6 @@
 # 3D Model Search Workbench
 
-[![CI](https://github.com/Oycreatesabug/3d-model-search-workbench/actions/workflows/ci.yml/badge.svg)](https://github.com/Oycreatesabug/3d-model-search-workbench/actions/workflows/ci.yml)
+[![CI](https://github.com/bowling2005/3d-model-search-workbench/actions/workflows/ci.yml/badge.svg)](https://github.com/bowling2005/3d-model-search-workbench/actions/workflows/ci.yml)
 
 面向 Unity 游戏开发的本地优先 3D 资产工作台。它把多来源免费模型搜索、下载管理、许可记录、Blender 质检与 Unity 导入串成一条可审计的流水线。
 
@@ -79,7 +79,7 @@ Blender 和 Unity 都是可选项。未配置时，对应操作会保持禁用�
 ## 快速开始
 
 ```powershell
-git clone --recurse-submodules https://github.com/Oycreatesabug/3d-model-search-workbench.git
+git clone --recurse-submodules https://github.com/bowling2005/3d-model-search-workbench.git
 cd 3d-model-search-workbench
 npm install
 npm run setup:discovery
