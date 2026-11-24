@@ -1,0 +1,16 @@
+node_modules/
+dist/
+dist-electron/
+data/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+.vite/
+.env
+.env.*
+!.env.example
+*.db
+*.db-shm
+*.db-wal
+.model-library/

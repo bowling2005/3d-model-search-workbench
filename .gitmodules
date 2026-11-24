@@ -1,0 +1,3 @@
+[submodule "services/asset-discovery"]
+	path = services/asset-discovery
+	url = https://github.com/arielshad/3d-asset-server.git

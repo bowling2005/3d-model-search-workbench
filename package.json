@@ -1,0 +1,52 @@
+{
+  "name": "model-search-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A local 3D asset discovery and Unity import workbench.",
+  "license": "MIT",
+  "author": "3D Model Search Workbench contributors",
+  "homepage": "https://github.com/Oycreatesabug/3d-model-search-workbench",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Oycreatesabug/3d-model-search-workbench.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "dist-electron/electron/main.js",
+  "scripts": {
+    "dev": "concurrently -k \"npm:dev:renderer\" \"npm:dev:electron\"",
+    "dev:renderer": "vite --host 127.0.0.1",
+    "dev:electron": "wait-on http://127.0.0.1:5173 && npm run build:electron && cross-env MODEL_SEARCH_DEV_URL=http://127.0.0.1:5173 electron .",
+    "build": "npm run build:electron && npm run build:renderer",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "build:renderer": "vite build",
+    "setup:discovery": "npm --prefix services/asset-discovery ci && npm --prefix services/asset-discovery run build:server",
+    "db:seed": "tsx scripts/seed-db.ts",
+    "stage2:smoke": "tsx scripts/stage2-smoke.ts",
+    "blender:smoke": "tsx scripts/blender-smoke.ts",
+    "unity:smoke": "tsx scripts/unity-validation.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.electron.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "fflate": "^0.8.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "^39.2.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2",
+    "vitest": "^4.0.8",
+    "wait-on": "^9.0.1"
+  }
+}

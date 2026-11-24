@@ -1,0 +1,4287 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-11-23T15:24:48+08:00",
+  "inputs": {
+    "user_catalog_rows": 82,
+    "upstream_sources": 27
+  },
+  "merge_summary": {
+    "raw_input_rows": 82,
+    "upstream_sources": 27,
+    "merged_sources": 89,
+    "user_unique_sources": 78,
+    "overlap_source_count": 16,
+    "upstream_only_sources": 11,
+    "user_only_sources": 62
+  },
+  "merge_rules": [
+    "Provenance is preserved; merged records never discard the original source rows.",
+    "Canonical site IDs are based on verified aliases first, then normalized host names.",
+    "Sub-site and category URLs are stored as aliases instead of creating duplicate sources.",
+    "User-only seed records remain disabled until a live access, license, and download probe succeeds.",
+    "Authentication and entitlement fields remain unverified until site-specific probes are implemented."
+  ],
+  "sources": [
+    {
+      "source_id": "polyhaven",
+      "display_name": "Poly Haven",
+      "homepage": "https://polyhaven.com",
+      "domains": [
+        "polyhaven.com"
+      ],
+      "aliases": [
+        {
+          "name": "Poly Haven",
+          "url": "https://polyhaven.com/models",
+          "kind": "user_catalog_alias"
+        },
+        {
+          "name": "Poly Haven Textures",
+          "url": "https://polyhaven.com/textures",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "polyhaven",
+          "access": "api",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "4",
+          "82"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "全部 CC0，无需注册；有免费 API",
+        "formats": "GLTF、Blend、FBX",
+        "recommended_use": "写实道具、PBR 材质、HDRI 环境光",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "4",
+          "name": "Poly Haven",
+          "url": "https://polyhaven.com/models",
+          "region_language": "国际 / 英文",
+          "license_summary": "全部 CC0，无需注册；有免费 API",
+          "formats": "GLTF、Blend、FBX",
+          "recommended_use": "写实道具、PBR 材质、HDRI 环境光",
+          "notes": ""
+        },
+        {
+          "row_id": "82",
+          "name": "Poly Haven Textures",
+          "url": "https://polyhaven.com/textures",
+          "region_language": "国际 / 英文",
+          "license_summary": "CC0",
+          "formats": "PBR 贴图、HDRI",
+          "recommended_use": "与 Poly Haven 模型配套",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "lazytextures",
+      "display_name": "LazyTextures",
+      "homepage": "https://www.lazytextures.com",
+      "domains": [
+        "lazytextures.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "lazytextures",
+          "access": "api",
+          "added_at": "2026-11-13",
+          "added_by": "agent"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "scenario",
+      "display_name": "Scenario 3D Collection",
+      "homepage": "https://huggingface.co/datasets/scenario-labs/3d-collection",
+      "domains": [
+        "huggingface.co"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "scenario",
+          "access": "api",
+          "added_at": "2026-10-26",
+          "added_by": "agent"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "grab3d",
+      "display_name": "Grab3D",
+      "homepage": "https://grab3d.com",
+      "domains": [
+        "grab3d.com"
+      ],
+      "aliases": [
+        {
+          "name": "Grab3D",
+          "url": "https://grab3d.com/",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "grab3d",
+          "access": "scrape",
+          "added_at": "2026-10-21",
+          "added_by": "agent"
+        },
+        "user_catalog_row_ids": [
+          "10"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "CC0，无需登录",
+        "formats": "GLB、FBX、Blend、USDZ、OBJ",
+        "recommended_use": "城市建造、RPG 地牢、农场、赛车整套包",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "10",
+          "name": "Grab3D",
+          "url": "https://grab3d.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "CC0，无需登录",
+          "formats": "GLB、FBX、Blend、USDZ、OBJ",
+          "recommended_use": "城市建造、RPG 地牢、农场、赛车整套包",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "scrape",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "wikimediacommons",
+      "display_name": "Wikimedia Commons",
+      "homepage": "https://commons.wikimedia.org",
+      "domains": [
+        "commons.wikimedia.org"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "wikimediacommons",
+          "access": "api",
+          "added_at": "2026-10-16",
+          "added_by": "agent"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "freestylized",
+      "display_name": "FreeStylized",
+      "homepage": "https://freestylized.com",
+      "domains": [
+        "freestylized.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "freestylized",
+          "access": "api",
+          "added_at": "2026-10-11",
+          "added_by": "agent"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "sketchfab",
+      "display_name": "Sketchfab",
+      "homepage": "https://sketchfab.com",
+      "domains": [
+        "sketchfab.com"
+      ],
+      "aliases": [
+        {
+          "name": "Sketchfab",
+          "url": "https://sketchfab.com/3d-models?features=downloadable&sort_by=-likeCount",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "sketchfab",
+          "access": "api",
+          "added_at": "2026-10-10",
+          "added_by": "agent"
+        },
+        "user_catalog_row_ids": [
+          "23"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 多语言",
+        "license_summary": "混合许可；筛选 Downloadable + CC0/CC-BY",
+        "formats": "GLTF、GLB、FBX、OBJ、USDZ",
+        "recommended_use": "最大模型库，特定/写实/扫描模型",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "23",
+          "name": "Sketchfab",
+          "url": "https://sketchfab.com/3d-models?features=downloadable&sort_by=-likeCount",
+          "region_language": "国际 / 多语言",
+          "license_summary": "混合许可；筛选 Downloadable + CC0/CC-BY",
+          "formats": "GLTF、GLB、FBX、OBJ、USDZ",
+          "recommended_use": "最大模型库，特定/写实/扫描模型",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "threedassets",
+      "display_name": "3DAssets.dev",
+      "homepage": "https://3dassets.dev",
+      "domains": [
+        "3dassets.dev"
+      ],
+      "aliases": [
+        {
+          "name": "3DAssets.dev",
+          "url": "https://3dassets.dev/assets",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "threedassets",
+          "access": "api",
+          "added_at": "2026-10-07",
+          "added_by": "agent"
+        },
+        "user_catalog_row_ids": [
+          "9"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费商用、无需署名；无需注册",
+        "formats": "GLB",
+        "recommended_use": "22,000+ 游戏就绪 GLB、three.js",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "9",
+          "name": "3DAssets.dev",
+          "url": "https://3dassets.dev/assets",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费商用、无需署名；无需注册",
+          "formats": "GLB",
+          "recommended_use": "22,000+ 游戏就绪 GLB、three.js",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "polyfork",
+      "display_name": "Polyfork",
+      "homepage": "https://polyfork.dev",
+      "domains": [
+        "polyfork.dev"
+      ],
+      "aliases": [
+        {
+          "name": "Polyfork",
+          "url": "https://polyfork.dev/",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "polyfork",
+          "access": "api",
+          "added_at": "2026-10-06",
+          "added_by": "human"
+        },
+        "user_catalog_row_ids": [
+          "16"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费商用、无需署名；网格文件 CC BY 4.0",
+        "formats": "GLB、FBX、USDZ、OBJ",
+        "recommended_use": "3,500+ 可参数化低模，Web/three.js",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "16",
+          "name": "Polyfork",
+          "url": "https://polyfork.dev/",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费商用、无需署名；网格文件 CC BY 4.0",
+          "formats": "GLB、FBX、USDZ、OBJ",
+          "recommended_use": "3,500+ 可参数化低模，Web/three.js",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "itchio",
+      "display_name": "itch.io",
+      "homepage": "https://itch.io/game-assets",
+      "domains": [
+        "itch.io",
+        "kaylousberg.itch.io"
+      ],
+      "aliases": [
+        {
+          "name": "KayKit (Kay Lousberg)",
+          "url": "https://kaylousberg.itch.io/",
+          "kind": "user_catalog_alias"
+        },
+        {
+          "name": "itch.io 免费游戏素材区",
+          "url": "https://itch.io/game-assets/free/tag-3d",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "itchio",
+          "access": "scrape",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "3",
+          "8"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费包 CC0，itch.io 可付 $0",
+        "formats": "GLTF、FBX、OBJ",
+        "recommended_use": "地牢、RPG、六边形地形、动画角色",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "3",
+          "name": "KayKit (Kay Lousberg)",
+          "url": "https://kaylousberg.itch.io/",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费包 CC0，itch.io 可付 $0",
+          "formats": "GLTF、FBX、OBJ",
+          "recommended_use": "地牢、RPG、六边形地形、动画角色",
+          "notes": ""
+        },
+        {
+          "row_id": "8",
+          "name": "itch.io 免费游戏素材区",
+          "url": "https://itch.io/game-assets/free/tag-3d",
+          "region_language": "国际 / 多语言",
+          "license_summary": "作者自定义，大量 CC0/CC-BY",
+          "formats": "因包而异",
+          "recommended_use": "小众风格、复古、像素 3D、素材包",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "scrape",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "turbosquid",
+      "display_name": "TurboSquid",
+      "homepage": "https://www.turbosquid.com",
+      "domains": [
+        "turbosquid.com"
+      ],
+      "aliases": [
+        {
+          "name": "TurboSquid Free",
+          "url": "https://www.turbosquid.com/Search/3D-Models/free",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "turbosquid",
+          "access": "link",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "27"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 多语言",
+        "license_summary": "TurboSquid RF，明确允许游戏",
+        "formats": "MAX、FBX、OBJ、Blend、GLTF",
+        "recommended_use": "写实单个道具、车辆、硬表面",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "27",
+          "name": "TurboSquid Free",
+          "url": "https://www.turbosquid.com/Search/3D-Models/free",
+          "region_language": "美国 / 多语言",
+          "license_summary": "TurboSquid RF，明确允许游戏",
+          "formats": "MAX、FBX、OBJ、Blend、GLTF",
+          "recommended_use": "写实单个道具、车辆、硬表面",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "link",
+        "search": "link_only",
+        "license_metadata": "unverified",
+        "download": "manual_or_external",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "cgtrader",
+      "display_name": "CGTrader",
+      "homepage": "https://www.cgtrader.com",
+      "domains": [
+        "cgtrader.com"
+      ],
+      "aliases": [
+        {
+          "name": "CGTrader Free",
+          "url": "https://www.cgtrader.com/free-3d-models",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "cgtrader",
+          "access": "scrape",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "26"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "立陶宛 / 多语言",
+        "license_summary": "Royalty-Free；15 万+ 免费模型",
+        "formats": "FBX、OBJ、Blend、GLTF、MAX",
+        "recommended_use": "找不到时的超大备选库",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "26",
+          "name": "CGTrader Free",
+          "url": "https://www.cgtrader.com/free-3d-models",
+          "region_language": "立陶宛 / 多语言",
+          "license_summary": "Royalty-Free；15 万+ 免费模型",
+          "formats": "FBX、OBJ、Blend、GLTF、MAX",
+          "recommended_use": "找不到时的超大备选库",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "scrape",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "hdrihub",
+      "display_name": "HDRI Hub",
+      "homepage": "https://www.hdri-hub.com",
+      "domains": [
+        "hdri-hub.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "hdrihub",
+          "access": "scrape",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "scrape",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "opengameart",
+      "display_name": "OpenGameArt",
+      "homepage": "https://opengameart.org",
+      "domains": [
+        "opengameart.org"
+      ],
+      "aliases": [
+        {
+          "name": "OpenGameArt",
+          "url": "https://opengameart.org/",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "opengameart",
+          "access": "scrape",
+          "added_at": "2026-10-09",
+          "added_by": "agent"
+        },
+        "user_catalog_row_ids": [
+          "7"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "CC0 / CC-BY / CC-BY-SA / GPL，按资源",
+        "formats": "Blend、OBJ、FBX、GLTF",
+        "recommended_use": "开源游戏、社区美术、2D+3D+音频",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "7",
+          "name": "OpenGameArt",
+          "url": "https://opengameart.org/",
+          "region_language": "国际 / 英文",
+          "license_summary": "CC0 / CC-BY / CC-BY-SA / GPL，按资源",
+          "formats": "Blend、OBJ、FBX、GLTF",
+          "recommended_use": "开源游戏、社区美术、2D+3D+音频",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "scrape",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "texturescom",
+      "display_name": "Textures.com",
+      "homepage": "https://www.textures.com",
+      "domains": [
+        "textures.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "texturescom",
+          "access": "api",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "hdrmaps",
+      "display_name": "HDRMAPS",
+      "homepage": "https://hdrmaps.com",
+      "domains": [
+        "hdrmaps.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "hdrmaps",
+          "access": "api",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "ambientcg",
+      "display_name": "ambientCG",
+      "homepage": "https://ambientcg.com",
+      "domains": [
+        "ambientcg.com"
+      ],
+      "aliases": [
+        {
+          "name": "ambientCG",
+          "url": "https://ambientcg.com/",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "ambientcg",
+          "access": "api",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "79"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "德国 / 英文",
+        "license_summary": "CC0",
+        "formats": "PBR 贴图、HDRI",
+        "recommended_use": "无缝材质、地面、墙面",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "79",
+          "name": "ambientCG",
+          "url": "https://ambientcg.com/",
+          "region_language": "德国 / 英文",
+          "license_summary": "CC0",
+          "formats": "PBR 贴图、HDRI",
+          "recommended_use": "无缝材质、地面、墙面",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "cgbookcase",
+      "display_name": "cgbookcase",
+      "homepage": "https://www.cgbookcase.com",
+      "domains": [
+        "cgbookcase.com"
+      ],
+      "aliases": [
+        {
+          "name": "cgbookcase",
+          "url": "https://www.cgbookcase.com/",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "cgbookcase",
+          "access": "api",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "80"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "CC0",
+        "formats": "PBR 贴图",
+        "recommended_use": "高质量免费 PBR 材质",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "80",
+          "name": "cgbookcase",
+          "url": "https://www.cgbookcase.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "CC0",
+          "formats": "PBR 贴图",
+          "recommended_use": "高质量免费 PBR 材质",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "sharetextures",
+      "display_name": "ShareTextures",
+      "homepage": "https://www.sharetextures.com",
+      "domains": [
+        "sharetextures.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "sharetextures",
+          "access": "api",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "fab",
+      "display_name": "Fab",
+      "homepage": "https://www.fab.com",
+      "domains": [
+        "fab.com"
+      ],
+      "aliases": [
+        {
+          "name": "Fab (Epic)",
+          "url": "https://www.fab.com/",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "fab",
+          "access": "link",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "24"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 多语言",
+        "license_summary": "Fab Standard + 部分 CC；免费 Megascans 1,500+",
+        "formats": "Unreal、Unity、FBX、GLB、USD",
+        "recommended_use": "Unreal 项目、写实扫描、每两周免费",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "24",
+          "name": "Fab (Epic)",
+          "url": "https://www.fab.com/",
+          "region_language": "美国 / 多语言",
+          "license_summary": "Fab Standard + 部分 CC；免费 Megascans 1,500+",
+          "formats": "Unreal、Unity、FBX、GLB、USD",
+          "recommended_use": "Unreal 项目、写实扫描、每两周免费",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "link",
+        "search": "link_only",
+        "license_metadata": "unverified",
+        "download": "manual_or_external",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "kenney",
+      "display_name": "Kenney",
+      "homepage": "https://kenney.nl/assets",
+      "domains": [
+        "kenney.nl"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "kenney",
+          "access": "scrape",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "1"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "荷兰 / 英文",
+        "license_summary": "全部 CC0，无需注册",
+        "formats": "GLB、FBX、OBJ、Blend",
+        "recommended_use": "低多边形整套游戏素材、原型、Jam",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "1",
+          "name": "Kenney",
+          "url": "https://kenney.nl/assets",
+          "region_language": "荷兰 / 英文",
+          "license_summary": "全部 CC0，无需注册",
+          "formats": "GLB、FBX、OBJ、Blend",
+          "recommended_use": "低多边形整套游戏素材、原型、Jam",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "scrape",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "blenderkit",
+      "display_name": "BlenderKit",
+      "homepage": "https://www.blendkit.com",
+      "domains": [
+        "blendkit.com",
+        "blenderkit.com"
+      ],
+      "aliases": [
+        {
+          "name": "BlenderKit / Blendkit",
+          "url": "https://www.blenderkit.com/",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "blenderkit",
+          "access": "api",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "39"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费层 4.5 万+；RF 或 CC0",
+        "formats": ".blend（可导出 GLB/FBX）",
+        "recommended_use": "Blender 内直接拖拽模型/材质/HDRI",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "39",
+          "name": "BlenderKit / Blendkit",
+          "url": "https://www.blenderkit.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费层 4.5 万+；RF 或 CC0",
+          "formats": ".blend（可导出 GLB/FBX）",
+          "recommended_use": "Blender 内直接拖拽模型/材质/HDRI",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "poliigon",
+      "display_name": "Poliigon",
+      "homepage": "https://www.poliigon.com",
+      "domains": [
+        "poliigon.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "poliigon",
+          "access": "link",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "link",
+        "search": "link_only",
+        "license_metadata": "unverified",
+        "download": "manual_or_external",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "quaternius",
+      "display_name": "Quaternius",
+      "homepage": "https://quaternius.com",
+      "domains": [
+        "quaternius.com"
+      ],
+      "aliases": [
+        {
+          "name": "Quaternius",
+          "url": "https://quaternius.com/",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "quaternius",
+          "access": "scrape",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "2",
+          "47"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "全部 CC0，无需注册",
+        "formats": "GLB、FBX、OBJ、Blend",
+        "recommended_use": "风格化低模角色、动物、自然、载具",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "2",
+          "name": "Quaternius",
+          "url": "https://quaternius.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "全部 CC0，无需注册",
+          "formats": "GLB、FBX、OBJ、Blend",
+          "recommended_use": "风格化低模角色、动物、自然、载具",
+          "notes": ""
+        },
+        {
+          "row_id": "47",
+          "name": "Quaternius Universal Animation Library",
+          "url": "https://quaternius.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "CC0",
+          "formats": "GLB、FBX",
+          "recommended_use": "通用人形动画，可重定向到自定义角色",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "scrape",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "threedtextures",
+      "display_name": "3DTextures.me",
+      "homepage": "https://3dtextures.me",
+      "domains": [
+        "3dtextures.me"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "threedtextures",
+          "access": "api",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "threedtexel",
+      "display_name": "3DTexel",
+      "homepage": "https://3dtexel.com",
+      "domains": [
+        "3dtexel.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "threedtexel",
+          "access": "api",
+          "added_at": "2026-10-06",
+          "added_by": "agent"
+        },
+        "user_catalog_row_ids": []
+      },
+      "user_metadata": null,
+      "seed_entries": [],
+      "access": {
+        "upstream_mode": "api",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "texturecan",
+      "display_name": "TextureCan",
+      "homepage": "https://www.texturecan.com",
+      "domains": [
+        "texturecan.com"
+      ],
+      "aliases": [
+        {
+          "name": "TextureCan",
+          "url": "https://www.texturecan.com/",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": {
+          "source_id": "texturecan",
+          "access": "scrape",
+          "added_at": "2026-10-04",
+          "added_by": "launch"
+        },
+        "user_catalog_row_ids": [
+          "81"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费/CC0 混合",
+        "formats": "PBR 贴图",
+        "recommended_use": "建筑、地面、织物材质",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "81",
+          "name": "TextureCan",
+          "url": "https://www.texturecan.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费/CC0 混合",
+          "formats": "PBR 贴图",
+          "recommended_use": "建筑、地面、织物材质",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": "scrape",
+        "search": "candidate",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "upstream_integrated",
+      "enabled": true,
+      "notes": []
+    },
+    {
+      "source_id": "cger-com",
+      "display_name": "CGer",
+      "homepage": "https://www.cger.com/",
+      "domains": [
+        "cger.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "55"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 付费",
+        "formats": "MAX、FBX、OBJ",
+        "recommended_use": "CG 模型、游戏/影视资源",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "55",
+          "name": "CGer",
+          "url": "https://www.cger.com/",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 付费",
+          "formats": "MAX、FBX、OBJ",
+          "recommended_use": "CG 模型、游戏/影视资源",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "cgjoy-com",
+      "display_name": "CGJOY",
+      "homepage": "https://www.cgjoy.com/",
+      "domains": [
+        "cgjoy.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "58"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 会员/积分",
+        "formats": "MAX、FBX、C4D",
+        "recommended_use": "游戏动画、特效、模型、教程社区",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "58",
+          "name": "CGJOY",
+          "url": "https://www.cgjoy.com/",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 会员/积分",
+          "formats": "MAX、FBX、C4D",
+          "recommended_use": "游戏动画、特效、模型、教程社区",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "c4dsky-com",
+      "display_name": "书生 CG 资源网",
+      "homepage": "https://c4dsky.com/",
+      "domains": [
+        "c4dsky.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "57"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 会员；站点偶有不稳定",
+        "formats": "C4D、MAX、FBX",
+        "recommended_use": "C4D/游戏/影视工程与模型",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "57",
+          "name": "书生 CG 资源网",
+          "url": "https://c4dsky.com/",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 会员；站点偶有不稳定",
+          "formats": "C4D、MAX、FBX",
+          "recommended_use": "C4D/游戏/影视工程与模型",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "ltpmx-com",
+      "display_name": "立体派",
+      "homepage": "https://www.ltpmx.com/",
+      "domains": [
+        "ltpmx.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "56"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 付费",
+        "formats": "MAX、FBX、OBJ",
+        "recommended_use": "国内模型资源、角色/场景",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "56",
+          "name": "立体派",
+          "url": "https://www.ltpmx.com/",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 付费",
+          "formats": "MAX、FBX、OBJ",
+          "recommended_use": "国内模型资源、角色/场景",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "gfxcamp-com",
+      "display_name": "龋齿一号",
+      "homepage": "https://www.gfxcamp.com/",
+      "domains": [
+        "gfxcamp.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "59"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 会员",
+        "formats": "C4D、MAX、FBX",
+        "recommended_use": "CG 资源、模型、插件、工程",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "59",
+          "name": "龋齿一号",
+          "url": "https://www.gfxcamp.com/",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 会员",
+          "formats": "C4D、MAX、FBX",
+          "recommended_use": "CG 资源、模型、插件、工程",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "c4d-cn",
+      "display_name": "C4D 之家",
+      "homepage": "https://www.c4d.cn/",
+      "domains": [
+        "c4d.cn"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "54"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 会员",
+        "formats": "C4D、MAX、FBX",
+        "recommended_use": "C4D 模型、场景、材质",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "54",
+          "name": "C4D 之家",
+          "url": "https://www.c4d.cn/",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 会员",
+          "formats": "C4D、MAX、FBX",
+          "recommended_use": "C4D 模型、场景、材质",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "plateau",
+      "display_name": "PLATEAU（国土交通省）",
+      "homepage": "https://www.mlit.go.jp/plateau/",
+      "domains": [
+        "mlit.go.jp"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "48"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "日本 / 日文+英文",
+        "license_summary": "开放数据，需署名；可从 G 空间信息中心下载",
+        "formats": "FBX、OBJ、CityGML 等",
+        "recommended_use": "日本城市 3D、建筑/道路/地形、游戏舞台",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "48",
+          "name": "PLATEAU（国土交通省）",
+          "url": "https://www.mlit.go.jp/plateau/",
+          "region_language": "日本 / 日文+英文",
+          "license_summary": "开放数据，需署名；可从 G 空间信息中心下载",
+          "formats": "FBX、OBJ、CityGML 等",
+          "recommended_use": "日本城市 3D、建筑/道路/地形、游戏舞台",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "moxingyun-com",
+      "display_name": "模型云",
+      "homepage": "http://www.moxingyun.com/",
+      "domains": [
+        "moxingyun.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "52"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 付费；展览/室内为主",
+        "formats": "MAX、SU、OBJ",
+        "recommended_use": "展厅、室内、建筑、单体模型",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "52",
+          "name": "模型云",
+          "url": "http://www.moxingyun.com/",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 付费；展览/室内为主",
+          "formats": "MAX、SU、OBJ",
+          "recommended_use": "展厅、室内、建筑、单体模型",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "3d66",
+      "display_name": "3D 溜溜网",
+      "homepage": "https://3d.3d66.com/",
+      "domains": [
+        "3d.3d66.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "51"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 溜币；建筑室内为主",
+        "formats": "MAX、SU、FBX",
+        "recommended_use": "建筑、室内、家具、场景搭建",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "51",
+          "name": "3D 溜溜网",
+          "url": "https://3d.3d66.com/",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 溜币；建筑室内为主",
+          "formats": "MAX、SU、FBX",
+          "recommended_use": "建筑、室内、家具、场景搭建",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "cgmodel-com",
+      "display_name": "CG 模型网",
+      "homepage": "https://www.cgmodel.com/",
+      "domains": [
+        "cgmodel.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "50"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 付费/积分",
+        "formats": "MAX、FBX、OBJ、Blend",
+        "recommended_use": "国内 CG 模型、角色、场景、游戏资产",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "50",
+          "name": "CG 模型网",
+          "url": "https://www.cgmodel.com/",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 付费/积分",
+          "formats": "MAX、FBX、OBJ、Blend",
+          "recommended_use": "国内 CG 模型、角色、场景、游戏资产",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "aigei-com",
+      "display_name": "爱给网 3D 区",
+      "homepage": "https://www.aigei.com/3d",
+      "domains": [
+        "aigei.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "49"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 会员；游戏模型 4,000+ 套",
+        "formats": "MAX、FBX、OBJ、Blend 等",
+        "recommended_use": "国内游戏/影视/建筑模型、动作、贴图",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "49",
+          "name": "爱给网 3D 区",
+          "url": "https://www.aigei.com/3d",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 会员；游戏模型 4,000+ 套",
+          "formats": "MAX、FBX、OBJ、Blend 等",
+          "recommended_use": "国内游戏/影视/建筑模型、动作、贴图",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "korea-heritage",
+      "display_name": "国家遗产数字服务",
+      "homepage": "https://digital.khs.go.kr/heritage/heriTage.do",
+      "domains": [
+        "digital.khs.go.kr"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "60"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "韩国 / 韩文",
+        "license_summary": "免费提供；用于游戏/电影/模拟",
+        "formats": "3D 资产（多为 GLB/FBX）",
+        "recommended_use": "朝鲜宫殿、传统建筑、自然遗产、传统船舶",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "60",
+          "name": "国家遗产数字服务",
+          "url": "https://digital.khs.go.kr/heritage/heriTage.do",
+          "region_language": "韩国 / 韩文",
+          "license_summary": "免费提供；用于游戏/电影/模拟",
+          "formats": "3D 资产（多为 GLB/FBX）",
+          "recommended_use": "朝鲜宫殿、传统建筑、自然遗产、传统船舶",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "modown-cn",
+      "display_name": "魔顿",
+      "homepage": "http://www.modown.cn/",
+      "domains": [
+        "modown.cn"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "53"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国 / 中文",
+        "license_summary": "免费 + 会员",
+        "formats": "C4D、MAX、FBX",
+        "recommended_use": "C4D/游戏/影视模型、工程文件",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "53",
+          "name": "魔顿",
+          "url": "http://www.modown.cn/",
+          "region_language": "中国 / 中文",
+          "license_summary": "免费 + 会员",
+          "formats": "C4D、MAX、FBX",
+          "recommended_use": "C4D/游戏/影视模型、工程文件",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "assetkitdb",
+      "display_name": "AssetKitDB",
+      "homepage": "https://assetkitdb.min-inter.co.kr/",
+      "domains": [
+        "assetkitdb.min-inter.co.kr"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "61"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "韩国 / 韩文",
+        "license_summary": "免费 3D/2D 资产目录",
+        "formats": "GLB",
+        "recommended_use": "韩式韩屋、道路标志、车牌、交通设施、生活道具",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "61",
+          "name": "AssetKitDB",
+          "url": "https://assetkitdb.min-inter.co.kr/",
+          "region_language": "韩国 / 韩文",
+          "license_summary": "免费 3D/2D 资产目录",
+          "formats": "GLB",
+          "recommended_use": "韩式韩屋、道路标志、车牌、交通设施、生活道具",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "p3dm-ru",
+      "display_name": "p3dm.ru",
+      "homepage": "https://p3dm.ru/",
+      "domains": [
+        "p3dm.ru"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "74"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "俄罗斯 / 俄文",
+        "license_summary": "高：多为从商业游戏提取的模型",
+        "formats": "OBJ、FBX、MAX 等",
+        "recommended_use": "版权属于原游戏公司，**不能用于商业游戏**，仅可做个人研究/Mod 学习",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "74",
+          "name": "p3dm.ru",
+          "url": "https://p3dm.ru/",
+          "region_language": "俄罗斯 / 俄文",
+          "license_summary": "高：多为从商业游戏提取的模型",
+          "formats": "OBJ、FBX、MAX 等",
+          "recommended_use": "版权属于原游戏公司，**不能用于商业游戏**，仅可做个人研究/Mod 学习",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "3ddd-ru",
+      "display_name": "3ddd.ru",
+      "homepage": "https://3ddd.ru/",
+      "domains": [
+        "3ddd.ru"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "63"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "俄罗斯 / 俄文",
+        "license_summary": "注册后每天可免费下 3 个 FREE 模型",
+        "formats": "MAX、FBX、OBJ",
+        "recommended_use": "建筑、室内、家具、灯具、材质",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "63",
+          "name": "3ddd.ru",
+          "url": "https://3ddd.ru/",
+          "region_language": "俄罗斯 / 俄文",
+          "license_summary": "注册后每天可免费下 3 个 FREE 模型",
+          "formats": "MAX、FBX、OBJ",
+          "recommended_use": "建筑、室内、家具、灯具、材质",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "3dsky-org",
+      "display_name": "3dsky.org",
+      "homepage": "https://www.3dsky.org/",
+      "domains": [
+        "3dsky.org"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "64"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "俄罗斯 / 俄文+英文",
+        "license_summary": "免费 + 付费；按模型条款",
+        "formats": "MAX、FBX、OBJ",
+        "recommended_use": "建筑可视化、室内、家具、场景",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "64",
+          "name": "3dsky.org",
+          "url": "https://www.3dsky.org/",
+          "region_language": "俄罗斯 / 俄文+英文",
+          "license_summary": "免费 + 付费；按模型条款",
+          "formats": "MAX、FBX、OBJ",
+          "recommended_use": "建筑可视化、室内、家具、场景",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "smithsonian",
+      "display_name": "Smithsonian 3D",
+      "homepage": "https://3d.si.edu/",
+      "domains": [
+        "3d.si.edu"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "65"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 英文",
+        "license_summary": "标记 CC0 的模型可自由使用",
+        "formats": "OBJ、GLTF/GLB",
+        "recommended_use": "恐龙化石、文物、雕像、航天器扫描",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "65",
+          "name": "Smithsonian 3D",
+          "url": "https://3d.si.edu/",
+          "region_language": "美国 / 英文",
+          "license_summary": "标记 CC0 的模型可自由使用",
+          "formats": "OBJ、GLTF/GLB",
+          "recommended_use": "恐龙化石、文物、雕像、航天器扫描",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "nasa",
+      "display_name": "NASA 3D Resources",
+      "homepage": "https://science.nasa.gov/3d-resources/",
+      "domains": [
+        "science.nasa.gov"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "66"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 英文",
+        "license_summary": "公共领域（遵守 NASA 媒体指南）",
+        "formats": "GLB、FBX、Blend、STL、3DS",
+        "recommended_use": "火箭、火星车、卫星、行星地形",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "66",
+          "name": "NASA 3D Resources",
+          "url": "https://science.nasa.gov/3d-resources/",
+          "region_language": "美国 / 英文",
+          "license_summary": "公共领域（遵守 NASA 媒体指南）",
+          "formats": "GLB、FBX、Blend、STL、3DS",
+          "recommended_use": "火箭、火星车、卫星、行星地形",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "3dwarehouse-sketchup-com",
+      "display_name": "3D Warehouse (SketchUp)",
+      "homepage": "https://3dwarehouse.sketchup.com/",
+      "domains": [
+        "3dwarehouse.sketchup.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "67"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 多语言",
+        "license_summary": "免费，作者条款；商用需查",
+        "formats": "SKP、DAE、OBJ",
+        "recommended_use": "建筑、家具、现实产品、城市背景",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "67",
+          "name": "3D Warehouse (SketchUp)",
+          "url": "https://3dwarehouse.sketchup.com/",
+          "region_language": "美国 / 多语言",
+          "license_summary": "免费，作者条款；商用需查",
+          "formats": "SKP、DAE、OBJ",
+          "recommended_use": "建筑、家具、现实产品、城市背景",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "grabcad-com",
+      "display_name": "GrabCAD Library",
+      "homepage": "https://grabcad.com/library",
+      "domains": [
+        "grabcad.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "68"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 英文",
+        "license_summary": "免费，作者条款",
+        "formats": "STEP、IGES、STL、OBJ 等",
+        "recommended_use": "机械零件、工业设备、硬表面参考",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "68",
+          "name": "GrabCAD Library",
+          "url": "https://grabcad.com/library",
+          "region_language": "美国 / 英文",
+          "license_summary": "免费，作者条款",
+          "formats": "STEP、IGES、STL、OBJ 等",
+          "recommended_use": "机械零件、工业设备、硬表面参考",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "thingiverse-com",
+      "display_name": "Thingiverse",
+      "homepage": "https://www.thingiverse.com/",
+      "domains": [
+        "thingiverse.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "69"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 英文",
+        "license_summary": "CC 许可，按模型",
+        "formats": "STL、OBJ、3MF",
+        "recommended_use": "3D 打印道具、手办、机械件（需减面）",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "69",
+          "name": "Thingiverse",
+          "url": "https://www.thingiverse.com/",
+          "region_language": "美国 / 英文",
+          "license_summary": "CC 许可，按模型",
+          "formats": "STL、OBJ、3MF",
+          "recommended_use": "3D 打印道具、手办、机械件（需减面）",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "printables-com",
+      "display_name": "Printables",
+      "homepage": "https://www.printables.com/",
+      "domains": [
+        "printables.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "70"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "捷克 / 多语言",
+        "license_summary": "CC 许可，按模型",
+        "formats": "STL、3MF、OBJ",
+        "recommended_use": "打印件、桌游、道具、家居",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "70",
+          "name": "Printables",
+          "url": "https://www.printables.com/",
+          "region_language": "捷克 / 多语言",
+          "license_summary": "CC 许可，按模型",
+          "formats": "STL、3MF、OBJ",
+          "recommended_use": "打印件、桌游、道具、家居",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "cults3d-com",
+      "display_name": "Cults3D",
+      "homepage": "https://cults3d.com/",
+      "domains": [
+        "cults3d.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "71"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "法国 / 多语言",
+        "license_summary": "免费 + 付费，按模型",
+        "formats": "STL、OBJ、3MF",
+        "recommended_use": "手办、首饰、桌游、装饰道具",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "71",
+          "name": "Cults3D",
+          "url": "https://cults3d.com/",
+          "region_language": "法国 / 多语言",
+          "license_summary": "免费 + 付费，按模型",
+          "formats": "STL、OBJ、3MF",
+          "recommended_use": "手办、首饰、桌游、装饰道具",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "myminifactory-com",
+      "display_name": "MyMiniFactory",
+      "homepage": "https://www.myminifactory.com/",
+      "domains": [
+        "myminifactory.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "72"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "英国 / 英文",
+        "license_summary": "免费 + 付费，按模型",
+        "formats": "STL、OBJ",
+        "recommended_use": "桌游微缩模型、手办、道具",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "72",
+          "name": "MyMiniFactory",
+          "url": "https://www.myminifactory.com/",
+          "region_language": "英国 / 英文",
+          "license_summary": "免费 + 付费，按模型",
+          "formats": "STL、OBJ",
+          "recommended_use": "桌游微缩模型、手办、道具",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "yeggi-com",
+      "display_name": "Yeggi",
+      "homepage": "https://www.yeggi.com/",
+      "domains": [
+        "yeggi.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "73"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 多语言",
+        "license_summary": "搜索引擎，跳转到原站",
+        "formats": "因原站而异",
+        "recommended_use": "一次搜索多个 3D 模型站，比价/比许可",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "73",
+          "name": "Yeggi",
+          "url": "https://www.yeggi.com/",
+          "region_language": "国际 / 多语言",
+          "license_summary": "搜索引擎，跳转到原站",
+          "formats": "因原站而异",
+          "recommended_use": "一次搜索多个 3D 模型站，比价/比许可",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "polygonalmind",
+      "display_name": "PolygonalMind 100 Avatars",
+      "homepage": "https://github.com/PolygonalMind",
+      "domains": [
+        "github.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "46"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "西班牙 / 英文",
+        "license_summary": "CC0",
+        "formats": "FBX、VRM、GLB",
+        "recommended_use": "200+ 已绑定风格化角色，做人群/VR",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "46",
+          "name": "PolygonalMind 100 Avatars",
+          "url": "https://github.com/PolygonalMind",
+          "region_language": "西班牙 / 英文",
+          "license_summary": "CC0",
+          "formats": "FBX、VRM、GLB",
+          "recommended_use": "200+ 已绑定风格化角色，做人群/VR",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "models-resource-com",
+      "display_name": "models-resource.com",
+      "homepage": "https://www.models-resource.com/",
+      "domains": [
+        "models-resource.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "75"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "高：同上",
+        "formats": "OBJ、FBX、DAE 等",
+        "recommended_use": "任天堂/索尼等游戏模型提取，**禁止商用**",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "75",
+          "name": "models-resource.com",
+          "url": "https://www.models-resource.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "高：同上",
+          "formats": "OBJ、FBX、DAE 等",
+          "recommended_use": "任天堂/索尼等游戏模型提取，**禁止商用**",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "cgin",
+      "display_name": "씨지인 CG자료실",
+      "homepage": "https://cgin.co.kr/community/resources?category=3D+%EB%AA%A8%EB%8D%B8",
+      "domains": [
+        "cgin.co.kr"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "62"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "韩国 / 韩文",
+        "license_summary": "社区免费资源，按帖；海外访问可能不稳定",
+        "formats": "因资源而异",
+        "recommended_use": "韩国 CG 社区、绑定文件、工具、模型索引",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "62",
+          "name": "씨지인 CG자료실",
+          "url": "https://cgin.co.kr/community/resources?category=3D+%EB%AA%A8%EB%8D%B8",
+          "region_language": "韩国 / 韩文",
+          "license_summary": "社区免费资源，按帖；海外访问可能不稳定",
+          "formats": "因资源而异",
+          "recommended_use": "韩国 CG 社区、绑定文件、工具、模型索引",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "niconi-solid",
+      "display_name": "ニコニ立体 (Niconi Solid)",
+      "homepage": "https://3d.nicovideo.jp/",
+      "domains": [
+        "3d.nicovideo.jp"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "45"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "日本 / 日文",
+        "license_summary": "作者自定义；需 niconico 账号",
+        "formats": "PMX、FBX 等",
+        "recommended_use": "MMD 模型、日系角色、背景舞台",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "45",
+          "name": "ニコニ立体 (Niconi Solid)",
+          "url": "https://3d.nicovideo.jp/",
+          "region_language": "日本 / 日文",
+          "license_summary": "作者自定义；需 niconico 账号",
+          "formats": "PMX、FBX 等",
+          "recommended_use": "MMD 模型、日系角色、背景舞台",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "hum3d-com",
+      "display_name": "Hum3D Free",
+      "homepage": "https://hum3d.com/free/",
+      "domains": [
+        "hum3d.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "31"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费区；部分模型禁止商用，逐个看",
+        "formats": "OBJ、FBX、MAX 等",
+        "recommended_use": "高精度车辆、建筑、动物",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "31",
+          "name": "Hum3D Free",
+          "url": "https://hum3d.com/free/",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费区；部分模型禁止商用，逐个看",
+          "formats": "OBJ、FBX、MAX 等",
+          "recommended_use": "高精度车辆、建筑、动物",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "vroid-hub",
+      "display_name": "VRoid Hub",
+      "homepage": "https://hub.vroid.com/",
+      "domains": [
+        "hub.vroid.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "43"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "日本 / 日文+英文",
+        "license_summary": "作者自定义；可下载 VRM",
+        "formats": "VRM、GLB",
+        "recommended_use": "动漫风虚拟角色、VTuber、二次元游戏",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "43",
+          "name": "VRoid Hub",
+          "url": "https://hub.vroid.com/",
+          "region_language": "日本 / 日文+英文",
+          "license_summary": "作者自定义；可下载 VRM",
+          "formats": "VRM、GLB",
+          "recommended_use": "动漫风虚拟角色、VTuber、二次元游戏",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "poly-pizza",
+      "display_name": "Poly Pizza",
+      "homepage": "https://poly.pizza/",
+      "domains": [
+        "poly.pizza"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "5"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "多数 CC-BY，部分 CC0；无需注册",
+        "formats": "GLB、GLTF、OBJ",
+        "recommended_use": "Google Poly 存档、低模小道具",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "5",
+          "name": "Poly Pizza",
+          "url": "https://poly.pizza/",
+          "region_language": "国际 / 英文",
+          "license_summary": "多数 CC-BY，部分 CC0；无需注册",
+          "formats": "GLB、GLTF、OBJ",
+          "recommended_use": "Google Poly 存档、低模小道具",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "icosa-gallery",
+      "display_name": "Icosa Gallery",
+      "homepage": "https://icosa.gallery/",
+      "domains": [
+        "icosa.gallery"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "6"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "多数 CC-BY，部分 CC0",
+        "formats": "GLB、GLTF",
+        "recommended_use": "开放 WebXR / Google Poly 归档",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "6",
+          "name": "Icosa Gallery",
+          "url": "https://icosa.gallery/",
+          "region_language": "国际 / 英文",
+          "license_summary": "多数 CC-BY，部分 CC0",
+          "formats": "GLB、GLTF",
+          "recommended_use": "开放 WebXR / Google Poly 归档",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "gobkit-com",
+      "display_name": "Gobkit",
+      "homepage": "https://gobkit.com/freebies",
+      "domains": [
+        "gobkit.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "11"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "CC0，无需账号/API Key",
+        "formats": "GLB",
+        "recommended_use": "421 个低模角色/怪物/自然道具",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "11",
+          "name": "Gobkit",
+          "url": "https://gobkit.com/freebies",
+          "region_language": "国际 / 英文",
+          "license_summary": "CC0，无需账号/API Key",
+          "formats": "GLB",
+          "recommended_use": "421 个低模角色/怪物/自然道具",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "3dvalley-com",
+      "display_name": "3D Valley",
+      "homepage": "https://3dvalley.com/library",
+      "domains": [
+        "3dvalley.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "12"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "聚合 CC0，无需署名",
+        "formats": "GLB、HDR/EXR、MP3",
+        "recommended_use": "一站搜 Kenney/Quaternius/KayKit/Poly Haven",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "12",
+          "name": "3D Valley",
+          "url": "https://3dvalley.com/library",
+          "region_language": "国际 / 英文",
+          "license_summary": "聚合 CC0，无需署名",
+          "formats": "GLB、HDR/EXR、MP3",
+          "recommended_use": "一站搜 Kenney/Quaternius/KayKit/Poly Haven",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "shuriken-studio",
+      "display_name": "Shuriken Studio",
+      "homepage": "https://shuriken.studio/models",
+      "domains": [
+        "shuriken.studio"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "13"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费、无需账号/署名",
+        "formats": "GLB",
+        "recommended_use": "Roblox / 低模场景、任务、城镇",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "13",
+          "name": "Shuriken Studio",
+          "url": "https://shuriken.studio/models",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费、无需账号/署名",
+          "formats": "GLB",
+          "recommended_use": "Roblox / 低模场景、任务、城镇",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "codelove",
+      "display_name": "CodeLove Models",
+      "homepage": "https://models.codelove.in/",
+      "domains": [
+        "models.codelove.in"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "14"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "印度 / 英文",
+        "license_summary": "MIT / CC0 / CC-BY，无需注册",
+        "formats": "GLB",
+        "recommended_use": "6,792 个 GLB、绑定角色、载具、建筑",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "14",
+          "name": "CodeLove Models",
+          "url": "https://models.codelove.in/",
+          "region_language": "印度 / 英文",
+          "license_summary": "MIT / CC0 / CC-BY，无需注册",
+          "formats": "GLB",
+          "recommended_use": "6,792 个 GLB、绑定角色、载具、建筑",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "hydecogames-com",
+      "display_name": "HydeCo Free Art",
+      "homepage": "https://hydecogames.com/free-art/",
+      "domains": [
+        "hydecogames.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "15"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "CC0 / Public Domain",
+        "formats": "GLB 等",
+        "recommended_use": "2,420 个低模角色、怪物、载具、武器",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "15",
+          "name": "HydeCo Free Art",
+          "url": "https://hydecogames.com/free-art/",
+          "region_language": "国际 / 英文",
+          "license_summary": "CC0 / Public Domain",
+          "formats": "GLB 等",
+          "recommended_use": "2,420 个低模角色、怪物、载具、武器",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "pixor-art",
+      "display_name": "Pixor",
+      "homepage": "https://pixor.art/library/",
+      "domains": [
+        "pixor.art"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "17"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "CC0",
+        "formats": "Blend + 3D + 像素精灵图",
+        "recommended_use": "像素风 3D、RPG 道具、可渲染成 2D",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "17",
+          "name": "Pixor",
+          "url": "https://pixor.art/library/",
+          "region_language": "国际 / 英文",
+          "license_summary": "CC0",
+          "formats": "Blend + 3D + 像素精灵图",
+          "recommended_use": "像素风 3D、RPG 道具、可渲染成 2D",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "opensource3dassets-com",
+      "display_name": "Open Source 3D Assets",
+      "homepage": "https://www.opensource3dassets.com/",
+      "domains": [
+        "opensource3dassets.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "18"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "CC0 / CC-BY",
+        "formats": "GLB、FBX、VRM",
+        "recommended_use": "角色、VR、游戏用开源资产索引",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "18",
+          "name": "Open Source 3D Assets",
+          "url": "https://www.opensource3dassets.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "CC0 / CC-BY",
+          "formats": "GLB、FBX、VRM",
+          "recommended_use": "角色、VR、游戏用开源资产索引",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "propsmith-app",
+      "display_name": "Propsmith",
+      "homepage": "https://propsmith.app/",
+      "domains": [
+        "propsmith.app"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "19"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "公共道具库免费商用",
+        "formats": "GLB、STL、Roblox",
+        "recommended_use": "单件道具、真实尺寸、Roblox 就绪",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "19",
+          "name": "Propsmith",
+          "url": "https://propsmith.app/",
+          "region_language": "国际 / 英文",
+          "license_summary": "公共道具库免费商用",
+          "formats": "GLB、STL、Roblox",
+          "recommended_use": "单件道具、真实尺寸、Roblox 就绪",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "vibegamer-io",
+      "display_name": "VibeGamer",
+      "homepage": "https://vibegamer.io/assets",
+      "domains": [
+        "vibegamer.io"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "20"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 多语言",
+        "license_summary": "聚合 Kenney/Poly Haven，CC0",
+        "formats": "优化 GLB",
+        "recommended_use": "Web 游戏、three.js、可直接复制加载代码",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "20",
+          "name": "VibeGamer",
+          "url": "https://vibegamer.io/assets",
+          "region_language": "国际 / 多语言",
+          "license_summary": "聚合 Kenney/Poly Haven，CC0",
+          "formats": "优化 GLB",
+          "recommended_use": "Web 游戏、three.js、可直接复制加载代码",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "summerengine-com",
+      "display_name": "Summer Engine",
+      "homepage": "https://www.summerengine.com/asset-store/3d-models",
+      "domains": [
+        "summerengine.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "21"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费 / 署名，按资源",
+        "formats": "因资源而异",
+        "recommended_use": "角色、武器、环境、载具聚合",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "21",
+          "name": "Summer Engine",
+          "url": "https://www.summerengine.com/asset-store/3d-models",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费 / 署名，按资源",
+          "formats": "因资源而异",
+          "recommended_use": "角色、武器、环境、载具聚合",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "brojekgames-com",
+      "display_name": "Brojek GLB",
+      "homepage": "https://brojekgames.com/",
+      "domains": [
+        "brojekgames.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "22"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "自有免费区 + 付费",
+        "formats": "GLB",
+        "recommended_use": "Web/Godot/Unity 用低模 GLB",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "22",
+          "name": "Brojek GLB",
+          "url": "https://brojekgames.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "自有免费区 + 付费",
+          "formats": "GLB",
+          "recommended_use": "Web/Godot/Unity 用低模 GLB",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "booth-pm",
+      "display_name": "BOOTH",
+      "homepage": "https://booth.pm/ja/browse/3D%E3%83%A2%E3%83%87%E3%83%AB",
+      "domains": [
+        "booth.pm"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "44"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "日本 / 日文",
+        "license_summary": "作者自定义；大量 0 日元",
+        "formats": "VRM、FBX、PMX 等",
+        "recommended_use": "VRChat、MMD、日系服装/小物/场景",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "44",
+          "name": "BOOTH",
+          "url": "https://booth.pm/ja/browse/3D%E3%83%A2%E3%83%87%E3%83%AB",
+          "region_language": "日本 / 日文",
+          "license_summary": "作者自定义；大量 0 日元",
+          "formats": "VRM、FBX、PMX 等",
+          "recommended_use": "VRChat、MMD、日系服装/小物/场景",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "unity-asset-store",
+      "display_name": "Unity Asset Store",
+      "homepage": "https://assetstore.unity.com/?price=0-0&orderBy=1",
+      "domains": [
+        "assetstore.unity.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "25"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 多语言",
+        "license_summary": "Unity 标准 EULA；筛 Price = Free",
+        "formats": "Unity Package、FBX 等",
+        "recommended_use": "Unity 项目、角色、环境、特效、模板",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "25",
+          "name": "Unity Asset Store",
+          "url": "https://assetstore.unity.com/?price=0-0&orderBy=1",
+          "region_language": "美国 / 多语言",
+          "license_summary": "Unity 标准 EULA；筛 Price = Free",
+          "formats": "Unity Package、FBX 等",
+          "recommended_use": "Unity 项目、角色、环境、特效、模板",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "renderhub-com",
+      "display_name": "RenderHub Free",
+      "homepage": "https://www.renderhub.com/free-3d-models",
+      "domains": [
+        "renderhub.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "29"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 英文",
+        "license_summary": "免费区，按模型许可",
+        "formats": "OBJ、FBX、Blend、MAX",
+        "recommended_use": "游戏就绪、绑定角色、PBR",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "29",
+          "name": "RenderHub Free",
+          "url": "https://www.renderhub.com/free-3d-models",
+          "region_language": "美国 / 英文",
+          "license_summary": "免费区，按模型许可",
+          "formats": "OBJ、FBX、Blend、MAX",
+          "recommended_use": "游戏就绪、绑定角色、PBR",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "3dexport-com",
+      "display_name": "3DExport Free",
+      "homepage": "https://3dexport.com/free-3d-models",
+      "domains": [
+        "3dexport.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "30"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "俄语区/国际",
+        "license_summary": "Royalty-Free；2.3 万+ 免费",
+        "formats": "MAX、OBJ、FBX、BLEND、C4D",
+        "recommended_use": "游戏资产、低模、建筑、打印",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "30",
+          "name": "3DExport Free",
+          "url": "https://3dexport.com/free-3d-models",
+          "region_language": "俄语区/国际",
+          "license_summary": "Royalty-Free；2.3 万+ 免费",
+          "formats": "MAX、OBJ、FBX、BLEND、C4D",
+          "recommended_use": "游戏资产、低模、建筑、打印",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "tripo3d-ai",
+      "display_name": "Tripo AI",
+      "homepage": "https://www.tripo3d.ai/",
+      "domains": [
+        "tripo3d.ai"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "77"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 多语言",
+        "license_summary": "免费生成额度，商用看套餐",
+        "formats": "GLB、FBX、OBJ、STL、USDZ",
+        "recommended_use": "图生 3D、角色/道具草图转模型",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "77",
+          "name": "Tripo AI",
+          "url": "https://www.tripo3d.ai/",
+          "region_language": "国际 / 多语言",
+          "license_summary": "免费生成额度，商用看套餐",
+          "formats": "GLB、FBX、OBJ、STL、USDZ",
+          "recommended_use": "图生 3D、角色/道具草图转模型",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "gamedevmarket-net",
+      "display_name": "GameDev Market",
+      "homepage": "https://www.gamedevmarket.net/category/3d",
+      "domains": [
+        "gamedevmarket.net"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "32"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费 + 付费，游戏就绪",
+        "formats": "Unity、FBX 等",
+        "recommended_use": "独立游戏资产、PSX 风、成套包",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "32",
+          "name": "GameDev Market",
+          "url": "https://www.gamedevmarket.net/category/3d",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费 + 付费，游戏就绪",
+          "formats": "Unity、FBX 等",
+          "recommended_use": "独立游戏资产、PSX 风、成套包",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "artstation-com",
+      "display_name": "ArtStation Marketplace",
+      "homepage": "https://www.artstation.com/marketplace",
+      "domains": [
+        "artstation.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "33"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "作者定价，可筛免费",
+        "formats": "因作者而异",
+        "recommended_use": "高质量艺术家作品、角色/场景",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "33",
+          "name": "ArtStation Marketplace",
+          "url": "https://www.artstation.com/marketplace",
+          "region_language": "国际 / 英文",
+          "license_summary": "作者定价，可筛免费",
+          "formats": "因作者而异",
+          "recommended_use": "高质量艺术家作品、角色/场景",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "gumroad-com",
+      "display_name": "Gumroad",
+      "homepage": "https://gumroad.com/discover?query=free+3d+model",
+      "domains": [
+        "gumroad.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "34"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 英文",
+        "license_summary": "作者自定义，搜 free",
+        "formats": "因作者而异",
+        "recommended_use": "独立艺术家素材包、Blender 套件",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "34",
+          "name": "Gumroad",
+          "url": "https://gumroad.com/discover?query=free+3d+model",
+          "region_language": "美国 / 英文",
+          "license_summary": "作者自定义，搜 free",
+          "formats": "因作者而异",
+          "recommended_use": "独立艺术家素材包、Blender 套件",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "cubebrush-co",
+      "display_name": "CubeBrush",
+      "homepage": "https://cubebrush.co/marketplace",
+      "domains": [
+        "cubebrush.co"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "35"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 英文",
+        "license_summary": "免费区 + 付费",
+        "formats": "因资源而异",
+        "recommended_use": "游戏美术、笔刷、材质、模型",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "35",
+          "name": "CubeBrush",
+          "url": "https://cubebrush.co/marketplace",
+          "region_language": "美国 / 英文",
+          "license_summary": "免费区 + 付费",
+          "formats": "因资源而异",
+          "recommended_use": "游戏美术、笔刷、材质、模型",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "create-roblox-com",
+      "display_name": "Roblox Creator Store",
+      "homepage": "https://create.roblox.com/store",
+      "domains": [
+        "create.roblox.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "36"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 英文",
+        "license_summary": "Roblox 条款；免费/付费",
+        "formats": "Roblox 资产",
+        "recommended_use": "只适合 Roblox 游戏",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "36",
+          "name": "Roblox Creator Store",
+          "url": "https://create.roblox.com/store",
+          "region_language": "美国 / 英文",
+          "license_summary": "Roblox 条款；免费/付费",
+          "formats": "Roblox 资产",
+          "recommended_use": "只适合 Roblox 游戏",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "godotengine-org",
+      "display_name": "Godot Asset Library",
+      "homepage": "https://godotengine.org/asset-library/asset",
+      "domains": [
+        "godotengine.org"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "37"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "开源许可，多为插件/工具",
+        "formats": "Godot 资源",
+        "recommended_use": "Godot 项目工具，少量美术资源",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "37",
+          "name": "Godot Asset Library",
+          "url": "https://godotengine.org/asset-library/asset",
+          "region_language": "国际 / 英文",
+          "license_summary": "开源许可，多为插件/工具",
+          "formats": "Godot 资源",
+          "recommended_use": "Godot 项目工具，少量美术资源",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "meshy-ai",
+      "display_name": "Meshy 免费游戏模型库",
+      "homepage": "https://www.meshy.ai/category/gaming",
+      "domains": [
+        "meshy.ai"
+      ],
+      "aliases": [
+        {
+          "name": "Meshy",
+          "url": "https://www.meshy.ai/",
+          "kind": "user_catalog_alias"
+        }
+      ],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "38",
+          "76"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国/中国 / 多语言",
+        "license_summary": "社区模型 CC0；免费计划生成 CC BY 4.0",
+        "formats": "STL、3MF、FBX、GLB、OBJ、USDZ",
+        "recommended_use": "8.8 万+ AI/社区模型，快速补件",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "38",
+          "name": "Meshy 免费游戏模型库",
+          "url": "https://www.meshy.ai/category/gaming",
+          "region_language": "美国/中国 / 多语言",
+          "license_summary": "社区模型 CC0；免费计划生成 CC BY 4.0",
+          "formats": "STL、3MF、FBX、GLB、OBJ、USDZ",
+          "recommended_use": "8.8 万+ AI/社区模型，快速补件",
+          "notes": ""
+        },
+        {
+          "row_id": "76",
+          "name": "Meshy",
+          "url": "https://www.meshy.ai/",
+          "region_language": "美国/中国 / 多语言",
+          "license_summary": "免费额度；社区库 CC0；免费计划生成 CC BY 4.0",
+          "formats": "GLB、FBX、OBJ、STL、USDZ",
+          "recommended_use": "文生 3D、图生 3D、快速补道具",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "blendswap-com",
+      "display_name": "Blend Swap",
+      "homepage": "https://blendswap.com/",
+      "domains": [
+        "blendswap.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "40"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "CC0 / CC-BY，需注册",
+        "formats": ".blend",
+        "recommended_use": "Blender 原生场景、材质、游戏资产",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "40",
+          "name": "Blend Swap",
+          "url": "https://blendswap.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "CC0 / CC-BY，需注册",
+          "formats": ".blend",
+          "recommended_use": "Blender 原生场景、材质、游戏资产",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "mixamo-com",
+      "display_name": "Mixamo",
+      "homepage": "https://www.mixamo.com/",
+      "domains": [
+        "mixamo.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "41"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "美国 / 多语言",
+        "license_summary": "Adobe 免费账号；角色+动作免费",
+        "formats": "FBX、OBJ",
+        "recommended_use": "人形角色、自动绑定、走路/跑步/战斗动画",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "41",
+          "name": "Mixamo",
+          "url": "https://www.mixamo.com/",
+          "region_language": "美国 / 多语言",
+          "license_summary": "Adobe 免费账号；角色+动作免费",
+          "formats": "FBX、OBJ",
+          "recommended_use": "人形角色、自动绑定、走路/跑步/战斗动画",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "actorcore-reallusion-com",
+      "display_name": "ActorCore",
+      "homepage": "https://actorcore.reallusion.com/",
+      "domains": [
+        "actorcore.reallusion.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "42"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "中国台湾 / 英文",
+        "license_summary": "免费动作/角色 + 付费",
+        "formats": "FBX、iAvatar",
+        "recommended_use": "动作库、动捕、角色表演",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "42",
+          "name": "ActorCore",
+          "url": "https://actorcore.reallusion.com/",
+          "region_language": "中国台湾 / 英文",
+          "license_summary": "免费动作/角色 + 付费",
+          "formats": "FBX、iAvatar",
+          "recommended_use": "动作库、动捕、角色表演",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "free3d-com",
+      "display_name": "Free3D",
+      "homepage": "https://free3d.com/",
+      "domains": [
+        "free3d.com"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "28"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费 + 付费混合，按模型",
+        "formats": "Blender、FBX、OBJ、C4D",
+        "recommended_use": "综合免费模型，分类细",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "28",
+          "name": "Free3D",
+          "url": "https://free3d.com/",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费 + 付费混合，按模型",
+          "formats": "Blender、FBX、OBJ、C4D",
+          "recommended_use": "综合免费模型，分类细",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    },
+    {
+      "source_id": "hyper3d-ai",
+      "display_name": "Rodin (Hyper3D)",
+      "homepage": "https://hyper3d.ai/",
+      "domains": [
+        "hyper3d.ai"
+      ],
+      "aliases": [],
+      "provenance": {
+        "upstream_3d_asset_server": null,
+        "user_catalog_row_ids": [
+          "78"
+        ]
+      },
+      "user_metadata": {
+        "region_language": "国际 / 英文",
+        "license_summary": "免费额度，商用看套餐",
+        "formats": "GLB、FBX、OBJ、USDZ",
+        "recommended_use": "高精度文生/图生 3D、扫描级细节",
+        "notes": ""
+      },
+      "seed_entries": [
+        {
+          "row_id": "78",
+          "name": "Rodin (Hyper3D)",
+          "url": "https://hyper3d.ai/",
+          "region_language": "国际 / 英文",
+          "license_summary": "免费额度，商用看套餐",
+          "formats": "GLB、FBX、OBJ、USDZ",
+          "recommended_use": "高精度文生/图生 3D、扫描级细节",
+          "notes": ""
+        }
+      ],
+      "access": {
+        "upstream_mode": null,
+        "search": "unverified",
+        "license_metadata": "unverified",
+        "download": "unverified",
+        "auth_required": "unverified",
+        "entitlement_required": "unverified",
+        "rate_limit": "unverified",
+        "requires_live_probe": true
+      },
+      "connector_status": "seed_unverified",
+      "enabled": false,
+      "notes": []
+    }
+  ]
+}

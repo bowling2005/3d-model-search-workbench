@@ -1,0 +1,10 @@
+{
+  "name": "com.modelsearch.importer",
+  "version": "0.1.0",
+  "displayName": "3D Asset Workbench Importer",
+  "description": "Imports downloaded assets prepared by the local 3D Asset Workbench.",
+  "unity": "2021.3",
+  "author": {
+    "name": "3D Asset Workbench"
+  }
+}
