@@ -1,0 +1,35 @@
+appId: io.github.bowling2005.modelsearch
+productName: 3D Model Search Workbench
+copyright: Copyright © 2026 3D Model Search Workbench contributors
+
+directories:
+  output: release
+
+files:
+  - dist/**/*
+  - dist-electron/**/*
+  - package.json
+
+extraResources:
+  - from: sources.merged.json
+    to: sources.merged.json
+  - from: database
+    to: database
+  - from: blender
+    to: blender
+  - from: unity
+    to: unity
+
+asar: true
+compression: maximum
+
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+  artifactName: 3D-Model-Search-Workbench-${version}-portable.${ext}
+
+portable:
+  artifactName: 3D-Model-Search-Workbench-${version}-portable.${ext}
+  requestExecutionLevel: user

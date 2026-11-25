@@ -1,6 +1,6 @@
 {
   "name": "model-search-workbench",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "description": "A local 3D asset discovery and Unity import workbench.",
   "license": "MIT",
@@ -21,6 +21,7 @@
     "build": "npm run build:electron && npm run build:renderer",
     "build:electron": "tsc -p tsconfig.electron.json",
     "build:renderer": "vite build",
+    "dist:win": "npm run build && electron-builder --win portable --publish never",
     "setup:discovery": "npm --prefix services/asset-discovery ci && npm --prefix services/asset-discovery run build:server",
     "db:seed": "tsx scripts/seed-db.ts",
     "stage2:smoke": "tsx scripts/stage2-smoke.ts",
@@ -43,6 +44,7 @@
     "concurrently": "^9.2.1",
     "cross-env": "^10.1.0",
     "electron": "^39.2.0",
+    "electron-builder": "^26.18.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
     "vite": "^7.2.2",

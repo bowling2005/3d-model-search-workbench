@@ -3,10 +3,33 @@ import type {
   DiscoveryProvider,
   DiscoverySearchResponse,
 } from './types';
-import type { DiscoverySidecar } from './sidecar';
+
+export interface DiscoveryEndpoint {
+  ensureStarted(): Promise<void>;
+  getEndpoint(): {
+    baseUrl: string;
+    apiKey?: string | null;
+  };
+}
+
+export class RemoteDiscoveryEndpoint implements DiscoveryEndpoint {
+  constructor(
+    private readonly baseUrl: string,
+    private readonly apiKey: string | null = null,
+  ) {}
+
+  async ensureStarted(): Promise<void> {}
+
+  getEndpoint(): { baseUrl: string; apiKey: string | null } {
+    return {
+      baseUrl: this.baseUrl.replace(/\/+$/, ''),
+      apiKey: this.apiKey,
+    };
+  }
+}
 
 export interface DiscoveryClientOptions {
-  sidecar: DiscoverySidecar;
+  sidecar: DiscoveryEndpoint;
   timeoutMs?: number;
 }
 
@@ -78,7 +101,9 @@ export class DiscoveryClient {
     const suffix = params.size ? `?${params.toString()}` : '';
 
     let current = `${baseUrl}/v1/assets/${encodeURIComponent(id)}/download${suffix}`;
-    let authorization: string | undefined = `Bearer ${apiKey}`;
+    let authorization: string | undefined = apiKey
+      ? `Bearer ${apiKey}`
+      : undefined;
     for (let redirect = 0; redirect <= 5; redirect++) {
       const response = await fetch(current, {
         headers: authorization ? { Authorization: authorization } : undefined,
@@ -123,8 +148,8 @@ export class DiscoveryClient {
 
     const response = await fetch(`${baseUrl}${path}`, {
       headers: {
-        Authorization: `Bearer ${apiKey}`,
         Accept: 'application/json',
+        ...(apiKey ? { Authorization: `Bearer ${apiKey}` } : {}),
       },
       signal: combinedSignal,
     });

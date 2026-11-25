@@ -11,7 +11,11 @@ import {
 import { join } from 'node:path';
 import { AssetDatabase } from '../core/database';
 import { AssetDownloadManager } from '../core/discovery/download';
-import { DiscoveryClient } from '../core/discovery/client';
+import {
+  DiscoveryClient,
+  RemoteDiscoveryEndpoint,
+  type DiscoveryEndpoint,
+} from '../core/discovery/client';
 import { ModelSearchCoordinator } from '../core/discovery/search';
 import { DiscoverySidecar } from '../core/discovery/sidecar';
 import { BlenderPipeline } from '../core/pipeline/blender';
@@ -28,6 +32,7 @@ import type {
 let mainWindow: BrowserWindow | null = null;
 let database: AssetDatabase | null = null;
 let discoverySidecar: DiscoverySidecar | null = null;
+let discoveryEndpoint: DiscoveryEndpoint | null = null;
 let searchCoordinator: ModelSearchCoordinator | null = null;
 let downloadManager: AssetDownloadManager | null = null;
 let blenderPipeline: BlenderPipeline | null = null;
@@ -77,11 +82,15 @@ function createWindow(): void {
 
 function initializeDatabase(): AssetDatabase {
   const appRoot = app.getAppPath();
+  const resourceRoot = getResourceRoot();
+  const storageRoot = getStorageRoot();
   const databasePath =
-    process.env.MODEL_SEARCH_DB_PATH ?? join(appRoot, 'data', 'model-search.db');
-  const migrationsDir = join(appRoot, 'database', 'migrations');
+    process.env.MODEL_SEARCH_DB_PATH ??
+    join(storageRoot, 'model-search.db');
+  const migrationsDir = join(resourceRoot, 'database', 'migrations');
   const registryPath =
-    process.env.MODEL_SEARCH_REGISTRY_PATH ?? join(appRoot, 'sources.merged.json');
+    process.env.MODEL_SEARCH_REGISTRY_PATH ??
+    join(resourceRoot, 'sources.merged.json');
 
   const instance = new AssetDatabase({
     databasePath,
@@ -95,14 +104,26 @@ function initializeDatabase(): AssetDatabase {
 
 function initializeDiscovery(databaseInstance: AssetDatabase): void {
   const appRoot = app.getAppPath();
-  const storageRoot =
-    process.env.MODEL_SEARCH_DATA_DIR ?? join(appRoot, 'data');
-  blenderPipeline = new BlenderPipeline(databaseInstance, appRoot, storageRoot);
-  unityPipeline = new UnityPipeline(databaseInstance, appRoot);
+  const resourceRoot = getResourceRoot();
+  const storageRoot = getStorageRoot();
+  blenderPipeline = new BlenderPipeline(databaseInstance, resourceRoot, storageRoot);
+  unityPipeline = new UnityPipeline(databaseInstance, resourceRoot);
   accessManager = new AccessManager(databaseInstance, () => mainWindow);
   sourceDiscoveryService = new SourceDiscoveryService(databaseInstance);
-  discoverySidecar = new DiscoverySidecar({ appRoot });
-  const client = new DiscoveryClient({ sidecar: discoverySidecar });
+  const configuredMode = process.env.MODEL_SEARCH_DISCOVERY_MODE;
+  const useLocal = configuredMode
+    ? configuredMode === 'local'
+    : !app.isPackaged;
+  if (useLocal) {
+    discoverySidecar = new DiscoverySidecar({ appRoot });
+    discoveryEndpoint = discoverySidecar;
+  } else {
+    discoveryEndpoint = new RemoteDiscoveryEndpoint(
+      process.env.MODEL_SEARCH_DISCOVERY_URL ?? 'https://3d.shep.bot',
+      process.env.MODEL_SEARCH_DISCOVERY_API_KEY ?? null,
+    );
+  }
+  const client = new DiscoveryClient({ sidecar: discoveryEndpoint });
   searchCoordinator = new ModelSearchCoordinator(databaseInstance, client);
   downloadManager = new AssetDownloadManager(
     databaseInstance,
@@ -110,9 +131,22 @@ function initializeDiscovery(databaseInstance: AssetDatabase): void {
     storageRoot,
   );
 
-  void discoverySidecar.ensureStarted().catch((error: unknown) => {
+  void discoveryEndpoint.ensureStarted().catch((error: unknown) => {
     console.error('[discovery] sidecar startup failed', error);
   });
+}
+
+function getResourceRoot(): string {
+  return app.isPackaged ? process.resourcesPath : app.getAppPath();
+}
+
+function getStorageRoot(): string {
+  return (
+    process.env.MODEL_SEARCH_DATA_DIR ??
+    (app.isPackaged
+      ? join(app.getPath('userData'), 'data')
+      : join(app.getAppPath(), 'data'))
+  );
 }
 
 function scheduleSourceDiscovery(): void {
@@ -181,7 +215,7 @@ function registerIpcHandlers(): void {
   );
 
   ipcMain.handle('models:discovery-status', async () => {
-    if (!discoverySidecar) {
+    if (!discoveryEndpoint) {
       return {
         ready: false,
         providers: [],
@@ -189,8 +223,8 @@ function registerIpcHandlers(): void {
       };
     }
     try {
-      await discoverySidecar.ensureStarted();
-      const client = new DiscoveryClient({ sidecar: discoverySidecar });
+      await discoveryEndpoint.ensureStarted();
+      const client = new DiscoveryClient({ sidecar: discoveryEndpoint });
       return {
         ready: true,
         providers: await client.listProviders(),
@@ -604,6 +638,7 @@ app.on('before-quit', () => {
   }
   void discoverySidecar?.stop();
   discoverySidecar = null;
+  discoveryEndpoint = null;
   searchCoordinator = null;
   downloadManager = null;
   blenderPipeline = null;

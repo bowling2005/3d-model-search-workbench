@@ -17,6 +17,7 @@ import { SearchView } from './SearchView';
 import { AssetLibraryView } from './AssetLibraryView';
 import { AccessAccountsView } from './AccessAccountsView';
 import { SourceDiscoveryView } from './SourceDiscoveryView';
+import packageMetadata from '../package.json';
 
 type IconName =
   | 'grid'
@@ -335,7 +336,7 @@ function AccordionSidebar({
       <div className="sidebar-foot">
         <div className="stage-caption">
           <span>当前版本</span>
-          <strong>v0.1.0</strong>
+          <strong>v{packageMetadata.version}</strong>
         </div>
         <div className="progress-track">
           <div style={{ width: '100%' }} />
